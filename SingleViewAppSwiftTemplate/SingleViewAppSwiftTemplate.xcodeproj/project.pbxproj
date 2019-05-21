@@ -14,6 +14,8 @@
 		3A8AADD31DF9B85E00A2B931 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A8AADD11DF9B85E00A2B931 /* LaunchScreen.storyboard */; };
 		3A8AADDE1DF9B85E00A2B931 /* SingleViewAppSwiftTemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8AADDD1DF9B85E00A2B931 /* SingleViewAppSwiftTemplateTests.swift */; };
 		3A8AADE91DF9B85E00A2B931 /* SingleViewAppSwiftTemplateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A8AADE81DF9B85E00A2B931 /* SingleViewAppSwiftTemplateUITests.swift */; };
+		5CD8E2752294A57600182D32 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8E2742294A57600182D32 /* Character.swift */; };
+		5CD8E2772294BA9C00182D32 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8E2762294BA9C00182D32 /* Vehicle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		3A8AADE41DF9B85E00A2B931 /* SingleViewAppSwiftTemplateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SingleViewAppSwiftTemplateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8AADE81DF9B85E00A2B931 /* SingleViewAppSwiftTemplateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingleViewAppSwiftTemplateUITests.swift; sourceTree = "<group>"; };
 		3A8AADEA1DF9B85E00A2B931 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5CD8E2742294A57600182D32 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		5CD8E2762294BA9C00182D32 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +81,12 @@
 		3A8AADBC1DF9B85E00A2B931 = {
 			isa = PBXGroup;
 			children = (
+				5CD8E26F2294A0EE00182D32 /* Networking */,
+				5CD8E2732294A14300182D32 /* Views */,
+				5CD8E2722294A13900182D32 /* Controllers */,
+				5CD8E2702294A0F700182D32 /* View Models */,
+				5CD8E2712294A11A00182D32 /* Data Sources */,
+				5CD8E26E2294A06400182D32 /* Models */,
 				3A8AADC71DF9B85E00A2B931 /* SingleViewAppSwiftTemplate */,
 				3A8AADDC1DF9B85E00A2B931 /* SingleViewAppSwiftTemplateTests */,
 				3A8AADE71DF9B85E00A2B931 /* SingleViewAppSwiftTemplateUITests */,
@@ -123,6 +133,50 @@
 				3A8AADEA1DF9B85E00A2B931 /* Info.plist */,
 			);
 			path = SingleViewAppSwiftTemplateUITests;
+			sourceTree = "<group>";
+		};
+		5CD8E26E2294A06400182D32 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5CD8E2742294A57600182D32 /* Character.swift */,
+				5CD8E2762294BA9C00182D32 /* Vehicle.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5CD8E26F2294A0EE00182D32 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		5CD8E2702294A0F700182D32 /* View Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Models";
+			sourceTree = "<group>";
+		};
+		5CD8E2712294A11A00182D32 /* Data Sources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Data Sources";
+			sourceTree = "<group>";
+		};
+		5CD8E2722294A13900182D32 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		5CD8E2732294A14300182D32 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +313,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5CD8E2772294BA9C00182D32 /* Vehicle.swift in Sources */,
+				5CD8E2752294A57600182D32 /* Character.swift in Sources */,
 				3A8AADCB1DF9B85E00A2B931 /* ViewController.swift in Sources */,
 				3A8AADC91DF9B85E00A2B931 /* AppDelegate.swift in Sources */,
 			);
@@ -503,6 +559,7 @@
 				3A8AADEF1DF9B85E00A2B931 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A8AADF01DF9B85E00A2B931 /* Build configuration list for PBXNativeTarget "SingleViewAppSwiftTemplateTests" */ = {
 			isa = XCConfigurationList;
@@ -511,6 +568,7 @@
 				3A8AADF21DF9B85E00A2B931 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3A8AADF31DF9B85E00A2B931 /* Build configuration list for PBXNativeTarget "SingleViewAppSwiftTemplateUITests" */ = {
 			isa = XCConfigurationList;
@@ -519,6 +577,7 @@
 				3A8AADF51DF9B85E00A2B931 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
