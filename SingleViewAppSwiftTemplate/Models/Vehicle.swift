@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Vehicle {
+class Vehicle: Allowable {
     var Name: String
     var Make: String
     var cost_credits: String

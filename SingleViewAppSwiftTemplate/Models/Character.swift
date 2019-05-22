@@ -8,7 +8,11 @@
 
 import Foundation
 
-class Character {
+protocol Allowable {
+    
+}
+
+class Character: Allowable{
     var name: String
     var born: String
     var home: String

@@ -18,6 +18,7 @@
 		5CC882F22295E9BF00EC9F47 /* JSONDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC882F12295E9BF00EC9F47 /* JSONDownloader.swift */; };
 		5CC882F42295EA0800EC9F47 /* SWAPIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC882F32295EA0800EC9F47 /* SWAPIError.swift */; };
 		5CC882F62295EC0C00EC9F47 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC882F52295EC0C00EC9F47 /* Endpoint.swift */; };
+		5CC882F92295FD0200EC9F47 /* SWAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CC882F82295FD0200EC9F47 /* SWAPIClient.swift */; };
 		5CD8E2752294A57600182D32 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8E2742294A57600182D32 /* Character.swift */; };
 		5CD8E2772294BA9C00182D32 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CD8E2762294BA9C00182D32 /* Vehicle.swift */; };
 /* End PBXBuildFile section */
@@ -57,6 +58,7 @@
 		5CC882F12295E9BF00EC9F47 /* JSONDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDownloader.swift; sourceTree = "<group>"; };
 		5CC882F32295EA0800EC9F47 /* SWAPIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPIError.swift; sourceTree = "<group>"; };
 		5CC882F52295EC0C00EC9F47 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		5CC882F82295FD0200EC9F47 /* SWAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWAPIClient.swift; sourceTree = "<group>"; };
 		5CD8E2742294A57600182D32 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		5CD8E2762294BA9C00182D32 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +146,7 @@
 			children = (
 				5CC882F12295E9BF00EC9F47 /* JSONDownloader.swift */,
 				5CC882F32295EA0800EC9F47 /* SWAPIError.swift */,
+				5CC882F82295FD0200EC9F47 /* SWAPIClient.swift */,
 				5CC882F52295EC0C00EC9F47 /* Endpoint.swift */,
 			);
 			path = Networking;
@@ -300,6 +303,7 @@
 				5CD8E2752294A57600182D32 /* Character.swift in Sources */,
 				3A8AADCB1DF9B85E00A2B931 /* ViewController.swift in Sources */,
 				3A8AADC91DF9B85E00A2B931 /* AppDelegate.swift in Sources */,
+				5CC882F92295FD0200EC9F47 /* SWAPIClient.swift in Sources */,
 				5CC882F62295EC0C00EC9F47 /* Endpoint.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
