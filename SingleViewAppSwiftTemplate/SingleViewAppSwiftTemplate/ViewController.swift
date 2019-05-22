@@ -12,6 +12,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let endpoint = StarWars.search(name: "Luke Skywalker", type: .Character)
+        print(endpoint.request)
         // Do any additional setup after loading the view, typically from a nib.
     }
 
