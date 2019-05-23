@@ -13,44 +13,94 @@ import Foundation
 class SWAPIClient {
     let downloader = JSONDownloader()
     
-    func searchForATerm(withName name: String, ofType Type: DataType, completion: @escaping ([Allowable], SWAPIError?) -> Void) {
-        let endpoint = StarWars.search(name: name, type: Type)
+    func searchForCharacter(withName name: String, completion: @escaping ([Character], SWAPIError?) -> Void) {
+        let endpoint = StarWars.search(name: name, type: DataType.Character)
         
         performRequest(with: endpoint) { results, error in
             guard let results = results else {
                 completion([], error)
                 return
             }
-            var theTerm = [Allowable]()
-            if Type == .Character {
-                theTerm = results.flatMap { Character(json: $0) }
-            } else if Type == .Vehicle {
-                theTerm = results.flatMap { Vehicle(json: $0) }
-            } else if Type == .Starship {
-                theTerm = results.flatMap { Starship(json: $0) }
+            
+            let characters = results.flatMap { Character(json: $0) }
+            
+            completion(characters, nil)
+        }
+    }
+    
+    func searchForVehicle(withName name: String, completion: @escaping ([Vehicle], SWAPIError?) -> Void) {
+        let endpoint = StarWars.search(name: name, type: DataType.Vehicle)
+        
+        performRequest(with: endpoint) { results, error in
+            guard let results = results else {
+                completion([], error)
+                return
             }
-            completion(theTerm, nil)
+            
+            let vehicles = results.flatMap { Vehicle(json: $0) }
+            
+            completion(vehicles, nil)
+        }
+    }
+    
+    func searchForStarship(withName name: String, completion: @escaping ([Starship], SWAPIError?) -> Void) {
+        let endpoint = StarWars.search(name: name, type: DataType.Starship)
+        
+        performRequest(with: endpoint) { results, error in
+            guard let results = results else {
+                completion([], error)
+                return
+            }
+            
+            let starships = results.flatMap { Starship(json: $0) }
+            
+            completion(starships, nil)
         }
     }
     
     
-    func allData(ofType Type: DataType, completion: @escaping ([Allowable], SWAPIError?) -> Void) {
-        let endpoint = StarWars.data(type: Type)
+    func AllCharacters(completion: @escaping ([Character], SWAPIError?) -> Void) {
+        let endpoint = StarWars.data(type: .Character)
         
         performRequest(with: endpoint) { results, error in
             guard let results = results else {
                 completion([], error)
                 return
             }
-            var theTerm = [Allowable]()
-            if Type == .Character {
-                theTerm = results.flatMap { Character(json: $0) }
-            } else if Type == .Vehicle {
-                theTerm = results.flatMap { Vehicle(json: $0) }
-            } else if Type == .Starship {
-                theTerm = results.flatMap { Starship(json: $0) }
+            
+            let characters = results.flatMap { Character(json: $0) }
+            
+            completion(characters, nil)
+        }
+    }
+    
+    func AllVehicles(completion: @escaping ([Vehicle], SWAPIError?) -> Void) {
+        let endpoint = StarWars.data(type: .Vehicle)
+        
+        performRequest(with: endpoint) { results, error in
+            guard let results = results else {
+                completion([], error)
+                return
             }
-            completion(theTerm, nil)
+            
+            let vehicles = results.flatMap { Vehicle(json: $0) }
+            
+            completion(vehicles, nil)
+        }
+    }
+    
+    func AllStarships(completion: @escaping ([Starship], SWAPIError?) -> Void) {
+        let endpoint = StarWars.data(type: .Starship)
+        
+        performRequest(with: endpoint) { results, error in
+            guard let results = results else {
+                completion([], error)
+                return
+            }
+            
+            let starships = results.flatMap { Starship(json: $0) }
+            
+            completion(starships, nil)
         }
     }
 
@@ -111,47 +161,25 @@ class SWAPIClient {
 
 
 /*
- func searchForCharacter(withName name: String, completion: @escaping ([Character], SWAPIError?) -> Void) {
- let endpoint = StarWars.search(name: name, type: DataType.Character)
+ MARK : Some expirements
+ func searchForATerm(withName name: String, ofType Type: DataType, completion: @escaping ([Charcater], SWAPIError?) -> Void) {
+ let endpoint = StarWars.search(name: name, type: Type)
  
  performRequest(with: endpoint) { results, error in
  guard let results = results else {
  completion([], error)
  return
  }
- 
- let characters = results.flatMap { Character(json: $0) }
- 
- completion(characters, nil)
+ var theTerm = [Allowable]()
+ if Type == .Character {
+ theTerm = results.flatMap { Character(json: $0) }
+ } else if Type == .Vehicle {
+ theTerm = results.flatMap { Vehicle(json: $0) }
+ } else if Type == .Starship {
+ theTerm = results.flatMap { Starship(json: $0) }
  }
- }
- func searchForVehicle(withName name: String, completion: @escaping ([Vehicle], SWAPIError?) -> Void) {
- let endpoint = StarWars.search(name: name, type: DataType.Vehicle)
- 
- performRequest(with: endpoint) { results, error in
- guard let results = results else {
- completion([], error)
- return
- }
- 
- let vehicles = results.flatMap { Vehicle(json: $0) }
- 
- completion(vehicles, nil)
+ completion(theTerm, nil)
  }
  }
  
- func searchForStarship(withName name: String, completion: @escaping ([Starship], SWAPIError?) -> Void) {
- let endpoint = StarWars.search(name: name, type: DataType.Starship)
- 
- performRequest(with: endpoint) { results, error in
- guard let results = results else {
- completion([], error)
- return
- }
- 
- let starships = results.flatMap { Starship(json: $0) }
- 
- completion(starships, nil)
- }
- }
  */
