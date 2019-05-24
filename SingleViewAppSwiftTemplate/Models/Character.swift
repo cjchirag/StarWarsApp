@@ -42,6 +42,10 @@ class Character: Allowable{
         self.gender = Gender
         self.species = Species
     }
+    var HeightMetric: Int {
+        return 0
+        // update with algorithm
+    }
 }
 
 extension Character {

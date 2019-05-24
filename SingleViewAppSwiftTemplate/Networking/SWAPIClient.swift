@@ -12,7 +12,7 @@ import Foundation
 
 class SWAPIClient {
     let downloader = JSONDownloader()
-    
+   
     func searchForCharacter(withName name: String, completion: @escaping ([Character], SWAPIError?) -> Void) {
         let endpoint = StarWars.search(name: name, type: DataType.Character)
         
@@ -104,7 +104,6 @@ class SWAPIClient {
         }
     }
 
-    
     
     
     

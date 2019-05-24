@@ -8,6 +8,8 @@
 
 import UIKit
 
+var optionSelected: DataType?
+
 class ViewController: UIViewController {
     var Data = [Character]()
     override func viewDidLoad() {
@@ -20,6 +22,18 @@ class ViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-
+    @IBAction func CharacterAction(_ sender: Any) {
+        optionSelected = DataType.Character
+        performSegue(withIdentifier: "LetsGo", sender: nil)
+    }
+    @IBAction func VehicleAction(_ sender: Any) {
+        optionSelected = DataType.Vehicle
+        performSegue(withIdentifier: "LetsGo", sender: nil)
+    }
+    @IBAction func StarshipAction(_ sender: Any) {
+        optionSelected = DataType.Starship
+        performSegue(withIdentifier: "LetsGo", sender: nil)
+    }
+    
 }
 
