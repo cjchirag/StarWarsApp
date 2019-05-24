@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Starship: Allowable {
+class Starship: AllowData {
     var Name: String
     var Model: String
     var Make: String

@@ -8,7 +8,11 @@
 
 import Foundation
 
-struct CharacterDataViewModel {
+protocol DataViewModel {
+    
+}
+
+struct CharacterDataViewModel: DataViewModel {
     var name: String
     var born: String
     var home: String

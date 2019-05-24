@@ -15,6 +15,10 @@ enum ErrorsInApp: Error {
 
 class DetailDataSource: NSObject, UITableViewDataSource{
     
+    private var data: [AllowData]
+    
+    init(datas: [Allowable])
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
