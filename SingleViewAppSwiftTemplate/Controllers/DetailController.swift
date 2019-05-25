@@ -9,6 +9,33 @@
 import Foundation
 import UIKit
 
-class DetailController: UITableViewController {
+class DetailController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        <#code#>
+    }
+    
+    let client = SWAPIClient()
+    var names: [String]?
+    
+    @IBOutlet weak var collectionType: UILabel!
+    @IBOutlet weak var name: UILabel!
+    
+    func definition() {
+        if optionSelected == DataType.Character {
+            collectionType.text = "Character"
+            client.AllCharacters() { allData, error in
+                for character in allData {
+                    self.names?.append(character.name)
+                }
+            }
+        }
+    }
     
 }
