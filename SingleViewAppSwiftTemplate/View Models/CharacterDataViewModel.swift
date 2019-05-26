@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+/*
 protocol DataViewModel {
     
 }
@@ -21,3 +21,4 @@ extension CharacterDataViewModel {
         
     }
 }
+*/

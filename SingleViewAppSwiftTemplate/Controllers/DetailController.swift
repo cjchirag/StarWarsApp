@@ -17,9 +17,7 @@ class DetailController: UITableViewController, UIPickerViewDataSource, UIPickerV
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return 1
     }
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        <#code#>
-    }
+    
     
     let client = SWAPIClient()
     var names: [String]?
