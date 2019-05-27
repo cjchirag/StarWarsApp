@@ -7,18 +7,26 @@
 //
 
 import Foundation
-/*
+
 protocol DataViewModel {
     
 }
 
-struct CharacterDataViewModel: DataViewModel {
-    var title: String
-}
-
-extension CharacterDataViewModel {
-    init(character: Character){
-        
+class CharacterViewModel: DataViewModel {
+    var ThePerson: Character
+    var born: String
+    var home: String
+    var height: String
+    var eyecolor: String
+    var haircolor: String
+    
+    init(selectedPerson: Character) {
+        self.ThePerson = selectedPerson
+        self.born = selectedPerson.born
+        self.home = selectedPerson.home
+        self.height = selectedPerson.height
+        self.eyecolor = selectedPerson.eyeColor
+        self.haircolor = selectedPerson.hairColor
     }
+    
 }
-*/

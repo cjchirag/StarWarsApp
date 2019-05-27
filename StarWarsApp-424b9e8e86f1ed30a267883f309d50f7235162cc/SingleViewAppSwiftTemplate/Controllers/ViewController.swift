@@ -12,6 +12,7 @@ var optionSelected: DataType?
 
 class ViewController: UIViewController {
     var Data = [Character]()
+    var client = SWAPIClient()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -35,5 +36,16 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "LetsGo", sender: nil)
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToCharacter" {
+            let DetailController = segue.destination as! DetailController
+            DetailController.collectionType.text = "Character"
+            client.AllCharacters() { allData, error in
+                for character in allData {
+                    DetailController.names.append(character.name)
+                }
+            }
+        }
+    }
 }
 
