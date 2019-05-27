@@ -22,6 +22,8 @@ class DetailController: UITableViewController, UIPickerViewDataSource, UIPickerV
     let client = SWAPIClient()
     var names: [String]?
     
+    
+    
     @IBOutlet weak var collectionType: UILabel!
     @IBOutlet weak var name: UILabel!
     
