@@ -43,6 +43,7 @@ class ViewController: UIViewController {
             client.AllCharacters() { allData, error in
                 for character in allData {
                     DetailController.names.append(character.name)
+                    DetailController.AllCharacters.append(character)
                 }
             }
         }

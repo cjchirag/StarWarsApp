@@ -12,6 +12,7 @@ import UIKit
 class DetailController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
     var PersonViewModel: CharacterViewModel?
+    var AllCharacters = [Character]()
     
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -27,17 +28,16 @@ class DetailController: UITableViewController, UIPickerViewDataSource, UIPickerV
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-
+        client.searchForCharacter(withName: names[row]) { CharacterData, error in
+            let viewModel = CharacterViewModel(selectedPerson: self.AllCharacters[row])
+            self.PersonViewModel = viewModel
+        }
     }
     
     
     
     let client = SWAPIClient()
     var names = [String]()
-    
-    
-    
-    
     
     @IBOutlet weak var collectionType: UILabel!
     @IBOutlet weak var name: UILabel!
@@ -52,6 +52,7 @@ class DetailController: UITableViewController, UIPickerViewDataSource, UIPickerV
             return
         }
         let viewModel = CharacterViewModel(selectedPerson: thePerson)
+        self.PersonViewModel = viewModel
         /*
        UI Implementation
         */
