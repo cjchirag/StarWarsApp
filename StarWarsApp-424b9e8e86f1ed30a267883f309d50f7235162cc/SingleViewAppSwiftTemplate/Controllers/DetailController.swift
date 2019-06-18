@@ -9,12 +9,14 @@
 import Foundation
 import UIKit
 
-class DetailController: UITableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class DetailController: UIViewController {
     
-    var PersonViewModel: CharacterViewModel?
-    var AllCharacters = [Character]()
+    var AllPersons = [Character]()
+    var AllVehicles = [Vehicle]()
+    var AllStarships = [Starship]()
+    let client = SWAPIClient()
     
-    
+    /*
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -33,14 +35,7 @@ class DetailController: UITableViewController, UIPickerViewDataSource, UIPickerV
             self.PersonViewModel = viewModel
         }
     }
-    
-    
-    
-    let client = SWAPIClient()
-    var names = [String]()
-    
-    @IBOutlet weak var collectionType: UILabel!
-    @IBOutlet weak var name: UILabel!
+ */
     
     enum Errorsinapp: Error {
         case doesnotcontain
@@ -52,7 +47,7 @@ class DetailController: UITableViewController, UIPickerViewDataSource, UIPickerV
             return
         }
         let viewModel = CharacterViewModel(selectedPerson: thePerson)
-        self.PersonViewModel = viewModel
+       // self.PersonViewModel = viewModel
         /*
        UI Implementation
         */

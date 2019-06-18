@@ -110,7 +110,7 @@ class SWAPIClient {
     
     typealias Results = [[String: Any]]
     
-    // MARK: Creating a data task #INSTANCE
+    // MARK: Creating a data task
     //To create a data task that uses a completion handler, call the dataTask(with:) method of URLSession. Your completion handler needs to do three things:
     
     private func performRequest(with endpoint: Endpoint, completion: @escaping (Results?, SWAPIError?) -> Void) {
@@ -148,8 +148,6 @@ class SWAPIClient {
         task.resume()
         
     }
-    
-    
 }
 
 

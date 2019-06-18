@@ -9,10 +9,14 @@
 import UIKit
 
 var optionSelected: DataType?
+var count = 0
+var AllPeoples = [Character]()
 
 class ViewController: UIViewController {
     var Data = [Character]()
     var client = SWAPIClient()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -25,28 +29,37 @@ class ViewController: UIViewController {
 
     @IBAction func CharacterAction(_ sender: Any) {
         optionSelected = DataType.Character
-        performSegue(withIdentifier: "LetsGo", sender: nil)
+        client.AllCharacters(){ allData, error in
+            count = allData.count
+        }
     }
     @IBAction func VehicleAction(_ sender: Any) {
         optionSelected = DataType.Vehicle
-        performSegue(withIdentifier: "LetsGo", sender: nil)
     }
+    
     @IBAction func StarshipAction(_ sender: Any) {
         optionSelected = DataType.Starship
-        performSegue(withIdentifier: "LetsGo", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ToCharacter" {
-            let DetailController = segue.destination as! DetailController
-            DetailController.collectionType.text = "Character"
+        /*
+        if segue.identifier == "ToPersons" {
+            let PersonController = segue.destination as! PersonViewController
             client.AllCharacters() { allData, error in
                 for character in allData {
-                    DetailController.names.append(character.name)
-                    DetailController.AllCharacters.append(character)
+                    self.Data.append(character)
+                    PersonController.AllPersons?.append(character)
+                    AllPeoples.append(character)
+                }
+            }
+        } else if segue.identifier == "ToVehicle" {
+            let DetailController = segue.destination as! DetailController
+            client.AllVehicles() { allData, error in
+                for vehicle in allData {
+                    DetailController.AllVehicles.append(vehicle)
                 }
             }
         }
+        */
     }
 }
-
